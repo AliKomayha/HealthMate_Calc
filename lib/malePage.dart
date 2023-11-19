@@ -10,9 +10,29 @@ class malePage extends StatelessWidget {
         title: const Text("Male Page"),
       ),
 
-      body: Center( child: Column(
+      body: const Center( child: Column(
         children:[
-            const Text("here is THE male page", style: TextStyle(fontSize: 30),)
+            Text("here is THE male page", style: TextStyle(fontSize: 30),),
+            SizedBox( height: 25.0,),
+            SizedBox( width:300.0, height:50.0,
+              child: TextField(
+              style: TextStyle(fontSize: 18.0),
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Enter Wight in Kg",
+              ),
+            ),),
+          SizedBox( height: 15.0,),
+          SizedBox( width:300.0, height:50.0,
+            child: TextField(
+              style: TextStyle(fontSize: 18.0),
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Enter Height in Cm",
+              ),
+            ),),
 
           ],
       )),
