@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'malePage.dart';
-import 'femalePage.dart';
+import 'bmiPage.dart';
+import 'idealPage.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,58 +25,75 @@ class _HomeState extends State<Home> {
         children: [
           const SizedBox(height: 150.0,),
 
-          /// male page button
-          ElevatedButton(
-
-              child:  Container(
-                   // width: 120,
-                  // height: 120,
-
-                // decoration: BoxDecoration(
-                //   color: Colors.lightBlueAccent,
-                //   //borderRadius: BorderRadius.circular(10),
-                //   ),
-
-                child: Icon(Icons.man_2_rounded, size: 100, color: Colors.white,),
+          /// bmi page button
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => bmiPage()),
+              );
+            },
+            child: Container(
+              width: 120,
+              height: 120,
+              padding: EdgeInsets.fromLTRB(23.5, 38, 23.5, 38),
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(10),
               ),
+              // child: Icon(Icons.woman_2_rounded, size: 100, color: Colors.white),
+              child: const Text(
+                'BMI',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
 
-              onPressed: (){
-
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context)=> const malePage(),
-                  )
-                );
-              },
           ),
           const SizedBox(height: 10.0,),
-          const Text("Male ", style: TextStyle(fontSize: 25.0,color: Colors.blue)),
+          const Text("Body Mass Index", style: TextStyle(fontSize: 25.0,color: Colors.green)),
+
           const SizedBox(height: 150.0,),
 
 
-        /// female page button
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => femalePage()),
-            );
-          },
-          child: Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              color: Colors.pink,
-              borderRadius: BorderRadius.circular(10),
+        /// Ideal page button
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => idealPage()),
+              );
+            },
+            child: Container(
+              width: 120,
+              height: 120,
+              padding: EdgeInsets.fromLTRB(23.5, 38, 23.5, 38),
+              decoration: BoxDecoration(
+                color: Colors.redAccent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              // child: Icon(Icons.woman_2_rounded, size: 100, color: Colors.white),
+              child: const Text(
+                'IBW',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            child: Icon(Icons.woman_2_rounded, size: 100, color: Colors.white),
-          ),
 
-        ),
+          ),
           const SizedBox(height: 10.0,),
-          const Text("Female ", style: TextStyle(fontSize: 25.0,color: Colors.pink)),
+          const Text("Ideal Body Weight", style: TextStyle(fontSize: 25.0,color: Colors.redAccent)),
+
         ],
 
       ),)
     );
   }
 }
+// text field
