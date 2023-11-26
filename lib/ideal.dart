@@ -4,7 +4,7 @@ class Ideal{
 
   Ideal(this.height,this.gender);
 
-  @override
+
 
   String getIdealWeight(){
     if (gender==1){
