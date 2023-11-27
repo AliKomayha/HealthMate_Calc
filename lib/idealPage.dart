@@ -30,7 +30,7 @@ class _idealPageState extends State<idealPage> {
           SizedBox(height: 25.0),
           Gender(ideal:_ideal),
           SizedBox(height: 25.0),
-          ElevatedButton(onPressed: () {updateIdeal();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
+          ElevatedButton(onPressed: () {validate();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
           SizedBox(height: 25.0),
           Text('$_text ', style: const TextStyle(fontSize: 18.0)),
 
@@ -40,6 +40,15 @@ class _idealPageState extends State<idealPage> {
 
   } // build
 
+    void validate(){
+      if(_height==-1){
+          setState(() {
+            _text="Please enter your height";
+          });
+      }else{
+          updateIdeal();
+      }
+    }
 
   void updateHeight(String height){
     if (height.trim()==''){

@@ -44,7 +44,7 @@ class _tenPageState extends State<tenPage> {
             SizedBox(height: 25.0),
             MyDropdownMenu(updateActivity: updateActivity),
             SizedBox(height: 25.0),
-            ElevatedButton(onPressed: () {updateTen();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
+            ElevatedButton(onPressed: () {validate();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
             SizedBox(height: 25.0),
             Text('$_text ', style: const TextStyle(fontSize: 18.0)),
 
@@ -52,6 +52,18 @@ class _tenPageState extends State<tenPage> {
       ),),
     );
   }// build
+  void validate(){
+      if(_height==-1 || _weight==-1 || _age==-1){
+        setState(() {
+          _text="Please enter all fields";
+        });
+
+      }
+      else{
+          updateTen();
+      }
+
+  }
   void updateHeight(String height){
     if (height.trim()==''){
       _height=-1;

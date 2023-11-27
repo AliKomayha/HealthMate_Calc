@@ -44,7 +44,7 @@ class _bmiPageState extends State<bmiPage> {
             MyTextField(f:updateNeck, hint:"Enter Neck Perimeter in Cm",),
 
           const SizedBox(height: 20.0,),
-          ElevatedButton(onPressed: () {updateBmi(); updateState();updateBFP();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
+          ElevatedButton(onPressed: () {validate();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
           const SizedBox(height: 40.0,),
           Text('$_text', style: const TextStyle(fontSize: 18.0)),
           const SizedBox(height: 20.0,),
@@ -60,6 +60,20 @@ class _bmiPageState extends State<bmiPage> {
     );
   }//build
 
+  void validate(){
+    if(_height==-1 || _weight==-1 || _waist==-1 || _neck==-1){
+      setState(() {
+        _text= 'Please fill all fields';
+        _state="";
+        _fat="";
+      });
+
+    }else{
+      updateBmi();
+      updateState();
+      updateBFP();
+    }
+  }
   void updateWeight(String weight){
     if (weight.trim()==''){
       _weight=-1;
@@ -100,7 +114,11 @@ class _bmiPageState extends State<bmiPage> {
     _bmi = Bmi(_weight, _height, _waist,_neck);
     String bmiResult = _bmi.getTotalBMI();
     setState(() {
-      _text = 'Body Mass Index: $bmiResult';
+      if(_weight==-1 || _height==-1){
+        _text= 'Please fill all fields';
+      }else {
+        _text = 'Body Mass Index: $bmiResult';
+      }
     });
 
   }
