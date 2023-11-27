@@ -17,14 +17,14 @@ class _idealPageState extends State<idealPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Female Page"),
+        title: const Text("Ideal Body Weight"),
       ),
 
       body:   Center( child: Column(
         children:[
 
           SizedBox(height: 25.0,),
-          Text("here is THE female page", style: TextStyle(fontSize: 30),),
+          Text("The Excellent Weight for your Body ", style: TextStyle(fontSize: 24),),
           SizedBox(height: 25.0),
           MyTextField(f:updateHeight, hint:"Enter Height in Cm",),
           SizedBox(height: 25.0),
@@ -32,7 +32,7 @@ class _idealPageState extends State<idealPage> {
           SizedBox(height: 25.0),
           ElevatedButton(onPressed: () {updateIdeal();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
           SizedBox(height: 25.0),
-          Text('Your Ideal body Weight= $_text KG', style: const TextStyle(fontSize: 18.0)),
+          Text('$_text ', style: const TextStyle(fontSize: 18.0)),
 
         ],
       )),
@@ -55,7 +55,7 @@ class _idealPageState extends State<idealPage> {
     _ideal = Ideal(_height,_ideal.gender);
     String idealResult = _ideal.getIdealWeight();
     setState(() {
-      _text = '$idealResult';
+      _text = 'Your Ideal body Weight= $idealResult KG';
     });
 
   }

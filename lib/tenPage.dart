@@ -30,10 +30,10 @@ class _tenPageState extends State<tenPage> {
         backgroundColor: Colors.redAccent,
       ),
 
-      body: Center( child: Column(
-          children: [
+      body: SingleChildScrollView( /*Center(*/ child: Column(
+         children: [
             const Text("Total Energy Needs Per Day", style: TextStyle(fontSize: 30),),
-            SizedBox(height: 25.0),
+            const SizedBox(height: 25.0),
             MyTextField(f:updateHeight, hint:"Enter Your Height in Cm",),
             SizedBox(height: 25.0),
             MyTextField(f:updateWeight, hint:"Enter Your Weight in Kg",),
@@ -46,7 +46,7 @@ class _tenPageState extends State<tenPage> {
             SizedBox(height: 25.0),
             ElevatedButton(onPressed: () {updateTen();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
             SizedBox(height: 25.0),
-            Text('The energy your body needs = $_text KCal/day', style: const TextStyle(fontSize: 18.0)),
+            Text('$_text ', style: const TextStyle(fontSize: 18.0)),
 
           ],
       ),),
@@ -93,7 +93,7 @@ class _tenPageState extends State<tenPage> {
     _ten=Ten(_height,_weight,_age,_ten.gender,_ten.activity);
     String tenResult= _ten.getTEN();
     setState(() {
-      _text= '$tenResult';
+      _text= 'Your body needs = $tenResult KCal/day';
     });
   }
 }// state

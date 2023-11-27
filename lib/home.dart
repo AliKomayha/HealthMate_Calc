@@ -72,14 +72,14 @@ class _HomeState extends State<Home> {
             child: Container(
               width: 120,
               height: 120,
-              padding: EdgeInsets.fromLTRB(23.5, 38, 23.5, 38),
+              padding: EdgeInsets.fromLTRB(21, 38, 21, 38),
               decoration: BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(10),
               ),
               // child: Icon(Icons.woman_2_rounded, size: 100, color: Colors.white),
               child: const Text(
-                'BMI',
+                'BSC',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 40.0,
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
 
           ),
           const SizedBox(height: 10.0,),
-          const Text("Body Mass Index", style: TextStyle(fontSize: 25.0,color: Colors.green)),
+          const Text("Body Stats Calculator", style: TextStyle(fontSize: 25.0,color: Colors.green)),
 
           const SizedBox(height: 85.0,),
 
@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
               height: 120,
               padding: EdgeInsets.fromLTRB(23.5, 38, 23.5, 38),
               decoration: BoxDecoration(
-                color: Colors.cyanAccent,
+                color: Colors.black26,
                 borderRadius: BorderRadius.circular(10),
               ),
               // child: Icon(Icons.woman_2_rounded, size: 100, color: Colors.white),
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
 
           ),
           const SizedBox(height: 10.0,),
-          const Text("Ideal Body Weight", style: TextStyle(fontSize: 25.0,color: Colors.cyanAccent)),
+          const Text("Ideal Body Weight", style: TextStyle(fontSize: 25.0,color: Colors.black26)),
 
         ],
 
