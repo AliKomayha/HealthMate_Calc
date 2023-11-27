@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Home Page'),
         centerTitle: true,
+        backgroundColor: Colors.purple,
       ),
       body: Center(child: Column(
 
@@ -125,6 +126,7 @@ class _HomeState extends State<Home> {
           ),
           const SizedBox(height: 10.0,),
           const Text("Ideal Body Weight", style: TextStyle(fontSize: 25.0,color: Colors.black26)),
+
 
         ],
 

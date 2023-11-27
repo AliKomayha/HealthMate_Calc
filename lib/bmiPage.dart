@@ -53,7 +53,14 @@ class _bmiPageState extends State<bmiPage> {
          /// ////////////// add here the state of the result //////////////////////////////
           const SizedBox(height: 40.0,),
           Text('$_fat', style: const TextStyle(fontSize: 18.0)),
+          const SizedBox(height: 100.0,),
+          ElevatedButton(
+              onPressed: (){
+                Navigator.of(context).pop(
 
+                );
+              },
+              child: const Icon(Icons.navigate_before, size:60))
 
           ],
       ),),

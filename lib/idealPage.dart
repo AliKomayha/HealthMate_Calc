@@ -33,6 +33,14 @@ class _idealPageState extends State<idealPage> {
           ElevatedButton(onPressed: () {validate();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
           SizedBox(height: 25.0),
           Text('$_text ', style: const TextStyle(fontSize: 18.0)),
+          const SizedBox(height: 50.0,),
+          ElevatedButton(
+              onPressed: (){
+                Navigator.of(context).pop(
+
+                );
+              },
+              child: const Icon(Icons.navigate_before, size:60))
 
         ],
       )),
