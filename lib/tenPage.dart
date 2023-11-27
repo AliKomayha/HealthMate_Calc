@@ -42,6 +42,8 @@ class _tenPageState extends State<tenPage> {
             SizedBox(height: 25.0),
             Gender(ten: _ten),
             SizedBox(height: 25.0),
+            const Text("Activity Factor:", style: TextStyle(fontSize: 15),),
+            SizedBox(height:15.0),
             MyDropdownMenu(updateActivity: updateActivity),
             SizedBox(height: 25.0),
             ElevatedButton(onPressed: () {validate();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
