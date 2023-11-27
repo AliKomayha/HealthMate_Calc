@@ -11,7 +11,9 @@ class Bmi{
     return 'BMI = $weight';
 
   }
+
   String getTotalBMI(){
+    height/=100;
     return (weight/(height*height)).toStringAsFixed(2);
   }
 

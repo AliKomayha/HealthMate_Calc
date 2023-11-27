@@ -29,7 +29,7 @@ class _bmiPageState extends State<bmiPage> {
             const SizedBox( height: 25.0,),
             MyTextField(f: updateWeight, hint: 'Enter Weight in Kg',),
             const SizedBox( height: 15.0,),
-            MyTextField(f:updateHeight, hint:"Enter Height in M",),
+            MyTextField(f:updateHeight, hint:"Enter Height in Cm",),
 
           const SizedBox(height: 20.0,),
           ElevatedButton(onPressed: () {updateBmi();}, child: Text('Calculate', style: TextStyle(fontSize: 24.0),)),
